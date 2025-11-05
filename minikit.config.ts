@@ -1,12 +1,14 @@
+// minikit.config.ts
 const ROOT_URL =
   process.env.NEXT_PUBLIC_URL ||
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
 /**
- * Farcaster MiniApp manifest (validator-compatible)
+ * Farcaster MiniApp manifest (validator-ready)
  *
+ * Notes:
+ * - Ensure NEXT_PUBLIC_URL or VERCEL_URL is set in production
  * - All URLs must be HTTPS in production
- * - Optional fields are filled or omitted properly
  */
 export const minikitConfig = {
   accountAssociation: {
