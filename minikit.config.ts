@@ -13,10 +13,7 @@ export const minikitConfig = {
     "payload": "eyJkb21haW4iOiJ3YWl0bGlzdC1kZW1vLXN0dS52ZXJjZWwuYXBwIn0",
     "signature": "/JMtUQ4i6APuM+OJV6i+QOn6kH3gKXLZv/UCi3MjZgRrbxoeEa3j5WL+b685cdvIdgEgkaSB7WYlq/a6nk7fLhw="
   },
-  
-  "baseBuilder": {
-    "ownerAddress": "0xD750903a0BaE0352B863608227aAD119E58BA356"
-  }
+  miniapp: {
     version: "1",
     name: "Cubey", 
     subtitle: "Your AI Ad Companion", 
