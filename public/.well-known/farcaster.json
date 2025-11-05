@@ -23,6 +23,9 @@
     "primaryCategory": "social",
     "tags": ["marketing", "ads", "quickstart", "waitlist"],
     "heroImageUrl": "https://waitlist-demo-stu.vercel.app/blue-hero.png",
+    "tagline": "",
+    "ogTitle": "",
+    "ogDescription": "",
     "ogImageUrl": "https://waitlist-demo-stu.vercel.app/blue-hero.png"
   }
 }
