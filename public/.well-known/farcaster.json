@@ -26,6 +26,7 @@
     "tagline": "",
     "ogTitle": "",
     "ogDescription": "",
-    "ogImageUrl": "https://waitlist-demo-stu.vercel.app/blue-hero.png"
+    "ogImageUrl": "https://waitlist-demo-stu.vercel.app/blue-hero.png",
+    "noindex": false
   }
 }
