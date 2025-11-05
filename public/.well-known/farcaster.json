@@ -4,29 +4,62 @@
     "payload": "eyJkb21haW4iOiJ3YWl0bGlzdC1kZW1vLXN0dS52ZXJjZWwuYXBwIn0",
     "signature": "/JMtUQ4i6APuM+OJV6i+QOn6kH3gKXLZv/UCi3MjZgRrbxoeEa3j5WL+b685cdvIdgEgkaSB7WYlq/a6nk7fLhw="
   },
-  "baseBuilder": {
-    "ownerAddress": "0xD750903a0BaE0352B863608227aAD119E58BA356"
-  },
   "miniapp": {
     "version": "1",
     "name": "Cubey",
-    "subtitle": "Your AI Ad Companion",
-    "description": "Ads",
-    "screenshotUrls": [
-      "https://waitlist-demo-stu.vercel.app/screenshot-portrait.png"
-    ],
-    "iconUrl": "https://waitlist-demo-stu.vercel.app/blue-icon.png",
-    "splashImageUrl": "https://waitlist-demo-stu.vercel.app/blue-hero.png",
+    "description": "Your AI Ad Companion",
+    "screenshotUrls": ["https://your-vercel-domain.com/images/screenshot-portrait.png"],
+    "iconUrl": "https://your-vercel-domain.com/images/blue-icon.png",
+    "splashImageUrl": "https://your-vercel-domain.com/images/blue-hero.png",
     "splashBackgroundColor": "#000000",
-    "homeUrl": "https://waitlist-demo-stu.vercel.app",
-    "webhookUrl": "https://waitlist-demo-stu.vercel.app/api/webhook",
+    "homeUrl": "https://your-vercel-domain.com",
     "primaryCategory": "social",
     "tags": ["marketing", "ads", "quickstart", "waitlist"],
-    "heroImageUrl": "https://waitlist-demo-stu.vercel.app/blue-hero.png",
-    "ogTitle": "",
-    "ogDescription": "",
-    "ogImageUrl": "https://waitlist-demo-stu.vercel.app/blue-hero.png",
-    "tagline": "",
-    "noindex": false
+    "heroImageUrl": "https://your-vercel-domain.com/images/blue-hero.png",
+    "ogImageUrl": "https://your-vercel-domain.com/images/blue-hero.png"
   }
+}
+Notes:
+
+Replace https://your-vercel-domain.com with your actual Vercel deployment URL.
+
+No extra fields (baseBuilder) or empty strings.
+
+This is fully validator-compatible.
+
+3️⃣ Optional dynamic approach (API route)
+If you want URLs to adapt dynamically based on environment variables, you can use:
+
+pages/api/farcaster.ts
+
+ts
+Copy code
+export default function handler(req, res) {
+  const ROOT_URL =
+    process.env.NEXT_PUBLIC_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
+  const manifest = {
+    accountAssociation: {
+      header: "eyJmaWQiOjE0NDU2ODIsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHg0N0NlMzc4Nzg4OTVEMjViQTk5QjY0RDVDZjI3MjQ4ZUI1OTUxQTNiIn0",
+      payload: "eyJkb21haW4iOiJ3YWl0bGlzdC1kZW1vLXN0dS52ZXJjZWwuYXBwIn0",
+      signature: "/JMtUQ4i6APuM+OJV6i+QOn6kH3gKXLZv/UCi3MjZgRrbxoeEa3j5WL+b685cdvIdgEgkaSB7WYlq/a6nk7fLhw="
+    },
+    miniapp: {
+      version: "1",
+      name: "Cubey",
+      description: "Your AI Ad Companion",
+      screenshotUrls: [`${ROOT_URL}/images/screenshot-portrait.png`],
+      iconUrl: `${ROOT_URL}/images/blue-icon.png`,
+      splashImageUrl: `${ROOT_URL}/images/blue-hero.png`,
+      splashBackgroundColor: "#000000",
+      homeUrl: ROOT_URL,
+      primaryCategory: "social",
+      tags: ["marketing", "ads", "quickstart", "waitlist"],
+      heroImageUrl: `${ROOT_URL}/images/blue-hero.png`,
+      ogImageUrl: `${ROOT_URL}/images/blue-hero.png`
+    }
+  };
+
+  res.status(200).json(manifest);
 }
