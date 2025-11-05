@@ -18,15 +18,11 @@
     "iconUrl": "https://waitlist-demo-stu.vercel.app/blue-icon.png",
     "splashImageUrl": "https://waitlist-demo-stu.vercel.app/blue-hero.png",
     "splashBackgroundColor": "#000000",
-    "homeUrl": "https://waitlist-demo-stu.vercel.app/",
+    "homeUrl": "https://waitlist-demo-stu.vercel.app",
     "webhookUrl": "https://waitlist-demo-stu.vercel.app/api/webhook",
     "primaryCategory": "social",
     "tags": ["marketing", "ads", "quickstart", "waitlist"],
     "heroImageUrl": "https://waitlist-demo-stu.vercel.app/blue-hero.png",
-    "tagline": "",
-    "ogTitle": "",
-    "ogDescription": "",
     "ogImageUrl": "https://waitlist-demo-stu.vercel.app/blue-hero.png"
   }
 }
-
